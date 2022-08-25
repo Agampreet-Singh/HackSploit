@@ -1,6 +1,6 @@
 ## HackSploit Framework . version 1.0
-    Author : MR UNKNOWN
-    Instagram : https://instagram.com/cyber_tech_world?utm_medium=copy_link
+    Author : CYBERXXEYE
+    Instagram : https://instagram.com/cyberxxeye
 
 ## Legal Disclamer:
     The author does not hold any responsibility for the bad use of this tool,
