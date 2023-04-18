@@ -1,6 +1,6 @@
 ## HackSploit Framework . version 1.0
-    Author : CYBERXXEYE
-    Instagram : https://instagram.com/cyberxxeye
+    Author : INDEPTH-CYBERSECURITY
+    Instagram : https://instagram.com/indepth-cybersecurity
 
 ## Legal Disclamer:
     The author does not hold any responsibility for the bad use of this tool,
